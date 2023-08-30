@@ -155,12 +155,12 @@ function Projects(props) {
                             X
                         </div>
                         <div className="screens">
-                            <FontAwesomeIcon
+                            {/* <FontAwesomeIcon
                                 icon={faDesktop}
                                 className="active"
                             />
                             <FontAwesomeIcon icon={faTabletScreenButton} />
-                            <FontAwesomeIcon icon={faMobileScreenButton} />
+                            <FontAwesomeIcon icon={faMobileScreenButton} /> */}
                         </div>
                         <span className="project-desc">
                             Artifex Store Website is a fictional online store
@@ -199,12 +199,12 @@ function Projects(props) {
                             X
                         </div>
                         <div className="screens">
-                            <FontAwesomeIcon
+                            {/* <FontAwesomeIcon
                                 icon={faDesktop}
                                 className="active"
                             />
                             <FontAwesomeIcon icon={faTabletScreenButton} />
-                            <FontAwesomeIcon icon={faMobileScreenButton} />
+                            <FontAwesomeIcon icon={faMobileScreenButton} /> */}
                         </div>
                         <span className="project-desc">
                             Tuder is a versatile tool that allows you to
@@ -244,12 +244,12 @@ function Projects(props) {
                             X
                         </div>
                         <div className="screens">
-                            <FontAwesomeIcon
+                            {/* <FontAwesomeIcon
                                 icon={faDesktop}
                                 className="active"
                             />
                             <FontAwesomeIcon icon={faTabletScreenButton} />
-                            <FontAwesomeIcon icon={faMobileScreenButton} />
+                            <FontAwesomeIcon icon={faMobileScreenButton} /> */}
                         </div>
                         <span className="project-desc">
                             Welcome to Drop Website project! This is a
@@ -286,12 +286,12 @@ function Projects(props) {
                             X
                         </div>
                         <div className="screens">
-                            <FontAwesomeIcon
+                            {/* <FontAwesomeIcon
                                 icon={faDesktop}
                                 className="active"
                             />
                             <FontAwesomeIcon icon={faTabletScreenButton} />
-                            <FontAwesomeIcon icon={faMobileScreenButton} />
+                            <FontAwesomeIcon icon={faMobileScreenButton} /> */}
                         </div>
                         <span className="project-desc">
                             Artifex Store Website is a fictional online store

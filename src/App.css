@@ -1,11 +1,10 @@
-
-*{
+* {
     margin: 0;
     font-family: "Harmattan", sans-serif;
-    font-family: "Kalam", cursive;  
+    font-family: "Kalam", cursive;
     z-index: 2;
 }
-.app{
+.app .row {
     position: relative;
     /* background-color: white; */
     background-color: #0f0e12;
@@ -14,18 +13,19 @@
     overflow-y: scroll;
     width: 100%;
     z-index: 1;
+    overflow: hidden;
 }
-.app::after{
+.app .row::after {
     position: absolute;
     content: "";
     background-image: url(overlay.jpg);
     width: 100%;
     height: 100vh;
     z-index: 1;
-    opacity: .1;
+    opacity: 0.1;
 }
 
-.app .side-bar .links{
+.app .side-bar .links {
     display: flex;
     position: relative;
     flex-direction: column;
@@ -35,74 +35,137 @@
     background-color: #090909;
     -webkit-box-shadow: 9px 10px 59px -27px rgb(0, 0, 0);
     -moz-box-shadow: 9px 10px 59px -27px rgb(0, 0, 0);
-    box-shadow: 9px 10px 59px -27px rgb(0, 0, 0); 
-
+    box-shadow: 9px 10px 59px -27px rgb(0, 0, 0);
 }
-.app .side-bar .links a{
+.app .side-bar .links a {
     text-decoration: none;
     color: #a8948e;
     font-size: 1.4rem;
     padding-bottom: 28px;
     margin-left: 35px;
-    transition: .3s;
+    transition: 0.3s;
     cursor: pointer;
-    opacity: .5;
+    opacity: 0.5;
     position: relative;
 }
-.app .side-bar .links a:hover{
+.app .side-bar .links a:hover {
     margin-left: 40px;
     /* font-size: 1.6rem; */
 }
-.app .side-bar .links a.active::before{
+.app .side-bar .links a.active::before {
     position: absolute;
     top: 14px;
     left: -34px;
-    content: '';
+    content: "";
     background-image: url(arrow.png);
     width: 30px;
     height: 20px;
     background-size: cover;
-    
 }
-.app .side-bar .links a.active{
+.app .side-bar .links a.active {
     margin-left: 67px;
     font-size: 2.5rem;
     opacity: 1;
 }
 
-.app .home{
+.app .home {
     height: 100vh;
     display: flex;
     justify-content: center;
-    flex-direction:column ;
+    flex-direction: column;
     padding-left: 50px;
     text-align: center;
     color: ;
 }
-.app .home h1{
-    font-size:9rem;
+.app .home h1 {
+    font-size: 9rem;
     text-align: center;
     font-weight: 800;
     margin: 0;
     letter-spacing: 0px;
 }
-.app .home h3{
+.app .home h3 {
     margin-top: ;
     font-size: 2.5rem;
     color: #727172;
-
 }
-.app .home p{
+.app .home p {
     margin: 0 auto;
     margin-top: 20px;
     color: #727172;
     line-height: 30px;
     font-size: 1.2rem;
     width: 70%;
-
 }
+.start {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color: #a8948e;
 
-.about{
+    background-color: #0f0e12;
+    text-align: center;
+}
+.start::after {
+    position: absolute;
+    content: "";
+    background-image: url(overlay.jpg);
+    width: 100%;
+    height: 100vh;
+    z-index: 1;
+    opacity: 0.1;
+}
+.start h1 {
+    font-size: 7rem;
+    margin: 0;
+    letter-spacing: 12px;
+}
+.start h3 {
+    margin: 0;
+    font-size: 2.6rem;
+    /* color: white; */
+    margin-bottom: 35px;
+}
+.start p {
+    font-size: 1.5rem;
+    transition: 0.3s;
+    -webkit-animation: mover 0.3s infinite alternate;
+    animation: mover 0.3s infinite alternate;
+}
+.start p span {
+    border: 1px solid #a8948e;
+    padding: 5px 15px;
+    border-radius: 6px;
+    color: white;
+    cursor: pointer;
+    transition: 0.3s;
+    margin-left: 5px;
+}
+.start p span:hover {
+    background-color: #a8948e;
+    color: black;
+    /* font-weight: 600; */
+}
+@-webkit-keyframes mover {
+    0% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(-7px);
+    }
+}
+@keyframes mover {
+    0% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(-7px);
+    }
+}
+.about {
     display: flex;
     justify-content: space-around;
     align-items: end;
@@ -110,28 +173,27 @@
     padding-bottom: 50px;
     /* padding: 40px; */
 }
-.a-b2a{
+.a-b2a {
     overflow: hidden;
     width: 100%;
     position: relative;
     height: 100vh;
 }
-.a-b2a .overlay{
+.a-b2a .overlay {
     position: absolute;
     width: 100%;
     height: 100vh;
     z-index: 0;
-
 }
-.about div{
+.about div {
     min-width: 150px;
     width: 150px;
     height: 150px;
     border-radius: 50%;
     background-color: #191922;
-    transition: .5s;
+    transition: 0.5s;
     color: #a8948e;
-    transition-timing-function:ease-in-out;
+    transition-timing-function: ease-in-out;
     margin-right: 25px;
     cursor: pointer;
     position: relative;
@@ -140,31 +202,31 @@
     justify-content: center;
     align-items: center; */
 }
-.about div h3{
+.about div h3 {
     margin: 0;
     height: 50px;
     line-height: 150px;
-    position:absolute;
+    position: absolute;
     left: 50%;
     transform: translateX(-50%);
-    transition: .3s;
+    transition: 0.3s;
 }
-.about div.active{
+.about div.active {
     transform: scale(1.2);
 }
-.about p{
+.about p {
     transition: 0.5s;
     margin-top: 120px;
     margin-left: -600px;
     padding-right: 30px;
-    padding-left:30px ;
-    transition-timing-function:ease-in-out;
+    padding-left: 30px;
+    transition-timing-function: ease-in-out;
 
     font-size: 1.4rem;
     line-height: 1.8;
     opacity: 0;
 }
-.about-main{
+.about-main {
     position: absolute;
     top: 33%;
     transform: translateY(-50%);
@@ -172,53 +234,53 @@
     text-align: center;
     width: 60%;
 }
-.about-main h1{
+.about-main h1 {
     font-size: 3.6rem;
     font-weight: 800;
 }
-.about-main p{
+.about-main p {
     line-height: 1.8;
     font-size: 1.2rem;
 }
 
 /* ------------------------------------ */
-.skills{
+.skills {
     position: relative;
-    overflow:hidden;
+    overflow: hidden;
     width: 100%;
     height: 100vh;
     display: flex;
     justify-content: center;
 }
-.skills h1{
+.skills h1 {
     position: absolute;
     top: 20%;
     transform: translateY(-50%);
     font-size: 3.6rem;
     font-weight: 800;
 }
-.skills .section{
+.skills .section {
     position: absolute;
     width: 50%;
     height: 50vh;
     /* background-color: #a8948e; */
     color: white;
     left: 50%;
-    top:60%;
-    transform:translate(-50%,-50%);
-    transition: .3s;
+    top: 60%;
+    transform: translate(-50%, -50%);
+    transition: 0.3s;
     text-align: center;
 }
-.skills .section h3{
+.skills .section h3 {
     margin-bottom: 20px;
     font-size: 2.2rem;
 }
-.skills .section .skill-row{
+.skills .section .skill-row {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
 }
-.skills .section .skill-row div{
+.skills .section .skill-row div {
     min-width: 120px;
     background-color: #02000c;
     color: white;
@@ -227,15 +289,15 @@
     margin-bottom: 20px;
     border-radius: 50%;
     font-size: 1.6rem;
-    transition: .3s;
+    transition: 0.3s;
     line-height: 120px;
 }
-.skills .section .skill-row div:hover{
+.skills .section .skill-row div:hover {
     transform: scale(1.1);
 }
-.skills span{
+.skills span {
     position: absolute;
-    top:50%;
+    top: 50%;
     transform: translateX(50%);
     z-index: 4;
     color: white;
@@ -243,45 +305,43 @@
     cursor: pointer;
     font-size: 36px;
 }
-.skills span.left{
+.skills span.left {
     left: 30px;
 }
-.skills span.right{
+.skills span.right {
     right: 30px;
 }
 
-
 /*-------------------------------------*/
 
-.contact{
+.contact {
     padding-top: 50px;
 }
-.contact h1{
+.contact h1 {
     text-align: center;
     margin-bottom: 30px;
     font-size: 3.6rem;
     font-weight: 800;
 }
-.contact .left h2{
+.contact .left h2 {
     /* color: white; */
     font-size: 2.6rem;
     margin-bottom: 20px;
     color: #727172;
 }
-.contact .left p{
+.contact .left p {
     color: #727172;
     width: 80%;
 }
-.contact .left p:not(:last-of-type){
+.contact .left p:not(:last-of-type) {
     margin-bottom: 40px;
-
 }
-.contact .left h3{
+.contact .left h3 {
     font-size: 2rem;
     color: #727172;
 }
 .contact .right input,
-.contact .right textarea{
+.contact .right textarea {
     width: 90%;
     background-color: transparent;
     border: none;
@@ -289,24 +349,24 @@
     padding: 30px 10px;
     color: #a8948e;
     margin-bottom: 10px;
-    transition: .3s;
+    transition: 0.3s;
     /* cursor: pointer; */
 }
 .contact .right input:focus,
-.contact .right textarea:focus{
+.contact .right textarea:focus {
     outline: none;
-    border-bottom-color:#a8948e;
+    border-bottom-color: #a8948e;
     /* border-bottom-width:2px ; */
 }
-.contact .right textarea{
+.contact .right textarea {
     height: 120px;
     max-height: 150px;
 }
 .contact .right input:hover,
-.contact .right textarea:hover{
+.contact .right textarea:hover {
     text-indent: 3px;
 }
-.contact .right button{
+.contact .right button {
     background-color: transparent;
     border: 1px solid #727172;
     border-radius: 20px;
@@ -314,39 +374,39 @@
     color: white;
     display: block;
     margin-top: 10px;
-    transition: .3s;
+    transition: 0.3s;
 }
-.contact .right button:hover{
-    background-color: #727172;
+.contact .right button:hover {
+    background-color: #191922;
+    border-color: #191922;
 }
-.contact .social{
+.contact .social {
     margin-top: 20px;
 }
-.contact .social a svg{
+.contact .social a svg {
     color: #a8948e;
     margin-right: 15px;
     font-size: 1.6rem;
-    transition: .3s;
+    transition: 0.3s;
 }
-.contact .social a svg:hover{
+.contact .social a svg:hover {
     transform: scale(1.1);
 }
 /*------------------------------------------*/
-.projects{
+.projects {
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
     position: relative;
-
 }
-.projects-container{
+.projects-container {
     display: flex;
     width: 100%;
     height: 90vh;
     flex-wrap: wrap;
 }
-.projects-container .project-box{
+.projects-container .project-box {
     display: flex;
     align-items: center;
 
@@ -358,57 +418,56 @@
     margin-bottom: 5px;
     cursor: pointer;
     overflow: hidden;
-    opacity: .9;
+    opacity: 0.9;
     color: white;
     /* transition: .3s; */
     border: 1px solid white;
     /* z-index: 0; */
 }
 
-.projects-container .project-box .background{
+.projects-container .project-box .background {
     content: "";
     position: absolute;
-    top:0;
+    top: 0;
     left: 0;
     width: 100%;
     height: 43.5vh;
     /* transform: scale(.95); */
-    transition: .5s;
+    transition: 0.5s;
     background-size: cover;
     background-position: center;
     opacity: 0;
     z-index: 0;
 }
-.projects-container .project-box p{
+.projects-container .project-box p {
     opacity: 1;
-    transition:  .3s;
+    transition: 0.3s;
 }
-.projects-container .project-box:hover .background{
-    opacity: .2;
+.projects-container .project-box:hover .background {
+    opacity: 0.2;
     transform: scale(1);
 }
-.projects-container .project-box:nth-of-type(1) .background{
+.projects-container .project-box:nth-of-type(1) .background {
     background-image: url(artifex.PNG);
-
 }
-.projects-container .project-box:nth-of-type(2) .background{
+.projects-container .project-box:nth-of-type(2) .background {
     background-image: url(Tuder.PNG);
 }
-.projects-container .project-box:nth-of-type(3) .background{
+.projects-container .project-box:nth-of-type(3) .background {
     background-image: url(education.PNG);
 }
-.projects-container .project-box:nth-of-type(4) .background{
+.projects-container .project-box:nth-of-type(4) .background {
     background-image: url(protifolio.PNG);
 }
-.projects-container .project-box .project-pop{
+.projects-container .project-box .project-pop {
     display: none;
     opacity: 0;
 }
-.projects-container .project-box.active .project-pop{
+.projects-container .project-box.active .project-pop {
     display: block;
     opacity: 1;
 }
-.projects-container .project-box.active{
+.projects-container .project-box.active {
     position: absolute;
     display: block !important;
     top: 0;
@@ -419,7 +478,7 @@
     background-color: #0f0e12;
     -webkit-box-shadow: 9px 10px 59px -27px rgb(0, 0, 0);
     -moz-box-shadow: 9px 10px 59px -27px rgb(0, 0, 0);
-    box-shadow: 9px 10px 59px -27px rgb(0, 0, 0); 
+    box-shadow: 9px 10px 59px -27px rgb(0, 0, 0);
     z-index: 3;
     border: none !important;
     text-align: center;
@@ -427,38 +486,37 @@
     font-weight: 800;
 }
 
-
-.projects-container .project-box.active p{
+.projects-container .project-box.active p {
     opacity: 1 !important;
-    margin:30px 0!important;
+    margin: 30px 0 !important;
     font-weight: 800;
     font-size: 1.6rem !important;
     /* position: absolute; */
     /* top: 30px; */
-
 }
-.projects-container .project-box.active .background{
+.projects-container .project-box.active .background {
     position: relative;
     display: block;
     margin: 0 auto;
     border-radius: 10px;
     width: 70%;
     height: 48vh;
-    opacity: 1!important;
+    opacity: 1 !important;
     transform: scale(1);
+    margin-bottom: 20px;
 }
-.projects-container .project-box.active .screens svg{
+.projects-container .project-box.active .screens svg {
     margin-left: 15px;
     color: #ccc;
     font-size: 20px;
     margin-top: 30px;
     margin-bottom: 10px;
 }
-.projects-container .project-box.active .screens .active{
+.projects-container .project-box.active .screens .active {
     color: #a8948e;
     transform: scale(1.15);
 }
-.projects-container .project-box.active .project-desc{
+.projects-container .project-box.active .project-desc {
     font-size: 16px;
     font-weight: 400;
     display: block;
@@ -467,24 +525,228 @@
     line-height: 28px;
     margin: 0 auto;
 }
-.projects-container .project-box.active .tech{
+.projects-container .project-box.active .tech {
     text-align: left;
-    margin-top: 40px;
+    margin-top: 20px;
     margin-left: 20px;
 }
-.projects-container .project-box.active .tech h3{
+.projects-container .project-box.active .tech h3 {
     font-size: 22px;
     color: #a8948e;
 }
-.projects-container .project-box.active .tech svg{
+.projects-container .project-box.active .tech svg {
     margin-left: 15px;
     color: #a8948e;
 }
-.projects-container .project-box.active .close-project{
+.projects-container .project-box.active .close-project {
     position: absolute;
     top: 30px;
     left: 30px;
     cursor: pointer;
     /* color: rgb(255, 72, 72); */
     font-weight: 600;
+}
+@media (min-width: 1281px) {
+    /* CSS */
+}
+
+/* 
+    ##Device = Laptops, Desktops
+    ##Screen = B/w 1025px to 1280px
+  */
+
+@media (min-width: 1025px) and (max-width: 1280px) {
+    .skills .section .skill-row div {
+        min-width: 100px;
+        height: 100px;
+        padding: 10px;
+        margin-right: 20px;
+        margin-bottom: 20px;
+        border-radius: 50%;
+        font-size: 1.6rem;
+        transition: 0.3s;
+        line-height: 80px;
+    }
+    .app .side-bar .links a.active {
+        margin-left: 67px;
+        font-size: 2.2rem;
+        opacity: 1;
+    }
+}
+
+/* 
+    ##Device = Tablets, Ipads (portrait)
+    ##Screen = B/w 768px to 1024px
+  */
+
+@media (min-width: 767px) and (max-width: 1024px) {
+    .about div.active {
+        transform: scale(1.1);
+    }
+    .about-main {
+        top: 30%;
+        right: 10%;
+        width: 80%;
+    }
+    .about-main h1 {
+        margin-bottom: 20px;
+    }
+    .skills h1 {
+        position: absolute;
+        top: 18%;
+        transform: translateY(-50%);
+        font-size: 3.2rem;
+        font-weight: 800;
+    }
+    .skills .section {
+        top: 55%;
+        width: 60%;
+    }
+    .skills .section .skill-row{
+        justify-content: space-around;
+    }
+    .skills .section h3 {
+        margin-bottom: 30px;
+        font-size: 2rem;
+    }
+    .skills .section .skill-row div {
+        min-width: 100px;
+        height: 100px;
+        padding: 10px;
+        font-size: 1.4rem;
+        line-height: 80px;
+        text-align: center;
+        
+    }
+    .app .side-bar .links a.active {
+        margin-left: 67px;
+        font-size: 2.2rem;
+        opacity: 1;
+    }
+    .projects-container .project-box.active {
+        /* overflow-y: scroll; */
+    }
+    .projects-container .project-box.active .background {
+        width: 80%;
+        height: 40vh;
+    }
+    h1{
+        font-size: 3rem !important;
+    }
+    .contact .row{
+        flex-wrap: wrap;
+        overflow-y: scroll;
+    }
+    .contact .row .col-6{
+        width: 100% !important;
+        text-align: center;
+    }
+    .contact .row .left{
+        margin-bottom: 50px;
+
+    }
+    .contact .left p{
+        margin: 0 auto;
+    }
+    .contact .right{
+        margin-bottom: 150px;
+    }
+    .contact .right button{
+        margin: 0 auto;
+    }
+}
+
+/* 
+    ##Device = Tablets, Ipads (landscape)
+    ##Screen = B/w 768px to 1024px
+  */
+/* 
+    ##Device = Low Resolution Tablets, Mobiles (Landscape)
+    ##Screen = B/w 481px to 767px
+  */
+
+@media (min-width: 481px) and (max-width: 767px) {
+    .about div.active {
+        transform: scale(1.1);
+    }
+    .about-main {
+        top: 30%;
+        right: 10%;
+        width: 80%;
+    }
+    .about-main h1 {
+        margin-bottom: 20px;
+    }
+    .skills h1 {
+        position: absolute;
+        top: 18%;
+        transform: translateY(-50%);
+        font-size: 3.2rem;
+        font-weight: 800;
+    }
+    .skills .section {
+        top: 55%;
+        width: 60%;
+    }
+    .skills .section .skill-row{
+        justify-content: space-around;
+    }
+    .skills .section h3 {
+        margin-bottom: 30px;
+        font-size: 2rem;
+    }
+    .skills .section .skill-row div {
+        min-width: 100px;
+        height: 100px;
+        padding: 10px;
+        font-size: 1.4rem;
+        line-height: 80px;
+        text-align: center;
+        
+    }
+    .app .side-bar .links a.active {
+        margin-left: 67px;
+        font-size: 2.2rem;
+        opacity: 1;
+    }
+    .projects-container .project-box.active {
+        /* overflow-y: scroll; */
+    }
+    .projects-container .project-box.active .background {
+        width: 80%;
+        height: 40vh;
+    }
+    h1{
+        font-size: 3rem !important;
+    }
+    .contact .row{
+        flex-wrap: wrap;
+        overflow-y: scroll;
+    }
+    .contact .row .col-6{
+        width: 100% !important;
+        text-align: center;
+    }
+    .contact .row .left{
+        margin-bottom: 50px;
+
+    }
+    .contact .left p{
+        margin: 0 auto;
+    }
+    .contact .right{
+        margin-bottom: 150px;
+    }
+    .contact .right button{
+        margin: 0 auto;
+    }
+}
+
+/* 
+    ##Device = Most of the Smartphones Mobiles (Portrait)
+    ##Screen = B/w 320px to 479px
+  */
+
+@media (min-width: 320px) and (max-width: 480px) {
+    /* CSS */
 }

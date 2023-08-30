@@ -9,6 +9,9 @@ function AboutMe(props) {
     const [showPopMid, setShowPopMid] = React.useState(false);
     const [popNumber, setPopNumber] = React.useState(0);
     const clickAudio = new Audio(sound);
+    let width = window.screen.width;
+    const isTablet = (width >= 768 && width <1024)
+    console.log(width)
     // const slideAudio = new Audio(slide);
     const myStyle = {
         width: "100%",
@@ -27,6 +30,9 @@ function AboutMe(props) {
         opacity: "100%",
         marginLeft: "0",
     };
+    const hidden = {
+        display:"none",
+    }
     document.onkeydown = function (e) {
         // console.log(e.key)
         if (e.key === "ArrowRight") {
@@ -105,7 +111,7 @@ function AboutMe(props) {
                 
                 <div
                     className={`left ${popNumber === 0 && "active"}`}
-                    style={showPopLeft ? myStyle : {}}
+                    style={showPopLeft ? myStyle : showPopMid&&isTablet? hidden: {}}
                     onClick={handleClickLeft}
                 >
                     <h3 style={showPopLeft ? headerStyle : {}}>FrontEnd</h3>
@@ -139,10 +145,10 @@ function AboutMe(props) {
             </div> */}
                 <div
                     className={`right ${popNumber === 1 && "active"}`}
-                    style={showPopMid ? myStyle : {}}
+                    style={showPopMid ? myStyle : showPopLeft&&isTablet? hidden:{}}
                     onClick={handleClickMid}
                 >
-                    <h3 style={showPopMid ? headerStyle : {}}>Ai</h3>
+                    <h3 style={showPopMid ? headerStyle :{}}>Ai</h3>
                     <p style={showPopMid ? pStyle : {}}>
                         In addition to frontend development, I have a keen
                         interest and expertise in machine learning. I have
