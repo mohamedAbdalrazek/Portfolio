@@ -95,41 +95,12 @@ function Projects(props) {
                 handleSlideLeft();
             }
         }
-        // if (e.key === "ArrowDown") {
-        //     if (activeProject === 0) {
-        //         props.handleUp();
-        //     } else {
-        //         if (activeProject > 0 && activeProject < 3) {
-        //             setActiveProject(
-        //                 (prevActiveNumber) => prevActiveNumber + 2
-        //             );
-        //         } else if (activeProject < 5 && activeProject > 2) {
-        //             setActiveProject(
-        //                 (prevActiveNumber) => prevActiveNumber - 2
-        //             );
-        //         }
-        //     }
-        // } else if (e.key === "ArrowUp") {
-        //     if (activeProject === 0) {
-        //         props.handleDown();
-        //     } else {
-        //         if (activeProject > 0 && activeProject < 3) {
-        //             setActiveProject(
-        //                 (prevActiveNumber) => prevActiveNumber + 2
-        //             );
-        //         } else if (activeProject < 5 && activeProject > 2) {
-        //             setActiveProject(
-        //                 (prevActiveNumber) => prevActiveNumber - 2
-        //             );
-        //         }
-        //     }
-        // }
 
         if (e.key === "ArrowDown") {
-            props.handleUp();
+            props.handleDown();
             console.log(props.activeNumber);
         } else if (e.key === "ArrowUp") {
-            props.handleDown();
+            props.handleUp();
             console.log(props.activeNumber);
         }
     };
@@ -139,6 +110,9 @@ function Projects(props) {
     }
     return (
         <div className="projects">
+            <h1>
+                Projects
+            </h1>
             <div className="projects-container ">
                 <div
                     style={activeProject === 1 ? activeStyle : {}}

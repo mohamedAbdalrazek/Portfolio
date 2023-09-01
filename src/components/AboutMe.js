@@ -13,22 +13,10 @@ function AboutMe(props) {
     const isTablet = (width >= 768 && width <1024)
     console.log(width)
     // const slideAudio = new Audio(slide);
-    const myStyle = {
-        width: "100%",
-        height: "calc(100vh - 50px  )",
-        zIndex: "4",
-        transform: "scale(1)",
-        borderRadius: "10px",
-        position: "relative",
-    };
     const headerStyle = {
         // left:"80px",
         fontWeight: "800",
         fontSize: "2rem",
-    };
-    const pStyle = {
-        opacity: "100%",
-        marginLeft: "0",
     };
     const hidden = {
         display:"none",
@@ -61,10 +49,8 @@ function AboutMe(props) {
             }
         }
         if (e.key === "ArrowDown") {
-            props.handleUp();
-        } else if (e.key === "ArrowUp") {
             props.handleDown();
-        }
+        } 
     };
     function handleClickLeft() {
         setShowPopLeft((prevShowPopLeft) => !prevShowPopLeft);
@@ -110,13 +96,13 @@ function AboutMe(props) {
             <div className="about">
                 
                 <div
-                    className={`left ${popNumber === 0 && "active"}`}
-                    style={showPopLeft ? myStyle : showPopMid&&isTablet? hidden: {}}
+                    className={`left ${popNumber === 0 && "active"} ${showPopLeft && "show"}`}
+                    style={ showPopMid&&isTablet? hidden: {}}
                     onClick={handleClickLeft}
                 >
-                    <h3 style={showPopLeft ? headerStyle : {}}>FrontEnd</h3>
+                    <h3>FrontEnd</h3>
 
-                    <p style={showPopLeft ? pStyle : {}}>
+                    <p>
                         As a frontend developer, I specialize in creating
                         captivating and user-friendly web experiences. With a
                         strongfoundation in HTML, CSS and JavaScript, I have the
@@ -127,29 +113,13 @@ function AboutMe(props) {
                         responsive web applications
                     </p>
                 </div>
-                {/* <div
-                className={`mid ${popNumber===1 && "active"}`}
-                style={showPopMid ? myStyle : {}}
-                onClick={handleClickMid}
-            >
-                <h3 style={showPopMid ? headerStyle : {}}>Engineering</h3>
-
-                <p style={showPopMid ? pStyle : {}}>
-                    My educational background in electrical engineering provides
-                    me with a solid foundation in problem-solving, critical
-                    thinking, and analytical skills. This knowledge complements
-                    my technical expertise in frontend development and machine
-                    learning, allowing me to approach projects with a
-                    comprehensive and interdisciplinary mindset.
-                </p>
-            </div> */}
                 <div
-                    className={`right ${popNumber === 1 && "active"}`}
-                    style={showPopMid ? myStyle : showPopLeft&&isTablet? hidden:{}}
+                    className={`right ${popNumber === 1 && "active"} ${showPopMid && "show"}`}
+                    style={ showPopLeft&&isTablet? hidden:{}}
                     onClick={handleClickMid}
                 >
-                    <h3 style={showPopMid ? headerStyle :{}}>Ai</h3>
-                    <p style={showPopMid ? pStyle : {}}>
+                    <h3>Ai</h3>
+                    <p>
                         In addition to frontend development, I have a keen
                         interest and expertise in machine learning. I have
                         acquired knowledge in various machine learning

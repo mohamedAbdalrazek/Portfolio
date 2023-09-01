@@ -17,42 +17,41 @@ function App() {
     const [showStart, setShowStart] = React.useState(true);
     //     const aboutAudio = new Audio(a7a);
     const [activeNumber, setActiveNumber] = React.useState(0);
+    let width = document.width;
+    const isMobile = width >= 320 && width < 480;
+    const [showMobilePop, setShowMobilePop] = React.useState(isMobile);
+    console.log(isMobile);
+
     function toggleStart() {
         setShowStart(false);
-        clickAudio.play()
+        clickAudio.play();
     }
     function handleClick(key) {
         if (activeNumber !== key) {
             clickAudio.play();
         }
         setActiveNumber(key);
+        if (isMobile) {
+            setShowMobilePop(true);
+        }
     }
-    function handleUp() {
-        // if(activeNumber ===0){
-        //     aboutAudio.play();
-        // }
+    function handleDown() {
         setActiveNumber((prevActiveNumber) => prevActiveNumber + 1);
         clickAudio.play();
     }
-    function handleDown() {
-        // if(activeNumber ===2){
-        //     aboutAudio.play();
-        // }
+    function handleUp() {
         setActiveNumber((prevActiveNumber) => prevActiveNumber - 1);
         clickAudio.play();
     }
     document.onkeydown = function (e) {
-        if (e.key === "ArrowDown" && activeNumber < 4) {
-            handleUp();
-        } else if (e.key === "ArrowUp" && activeNumber > 0) {
+        if (e.key === "ArrowDown" && activeNumber < 3) {
             handleDown();
+        } else if (e.key === "ArrowUp" && activeNumber > 0) {
+            handleUp();
         }
     };
     function section() {
         switch (activeNumber) {
-            // case 0:
-            //     return <Home activeNumber={activeNumber} />;
-            //     break;
             case 0:
                 return (
                     <AboutMe
@@ -83,15 +82,13 @@ function App() {
             case 3:
                 return <Contact activeNumber={activeNumber} />;
                 break;
-            // case 4:
-            //     return <Random activeNumber={activeNumber} />;
-            //     break;
             default:
                 break;
         }
     }
     return (
         <div className="app">
+            {activeNumber > 0 && <div className="arrow-up" onClick={handleUp}></div>}
             {/* <IconPage /> */}
             {showStart ? (
                 <Start toggleStart={toggleStart} />
@@ -104,11 +101,12 @@ function App() {
                         />
                     </div>
                     <div className="main-section col-lg-9 col-md-8 col-sm-6 col-xl-9">
-                        {section()}
+                        {!showMobilePop && section()}
                     </div>
                 </div>
             )}
             {/* {audio} */}
+            {activeNumber <3 &&!showStart && <div className="arrow-down" onClick={handleDown}></div>}
         </div>
     );
 }

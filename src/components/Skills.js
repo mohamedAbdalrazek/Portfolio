@@ -37,9 +37,9 @@ function Skills(props) {
             handleSlideLeft();
         }
         if (e.key === "ArrowDown") {
-            props.handleUp();
-        } else if (e.key === "ArrowUp") {
             props.handleDown();
+        } else if (e.key === "ArrowUp") {
+            props.handleUp();
         }
     };
     return (

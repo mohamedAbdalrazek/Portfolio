@@ -214,6 +214,22 @@
 .about div.active {
     transform: scale(1.2);
 }
+.about div.show {
+    width: 100%;
+    height: calc(100vh - 50px);
+    z-index: 4;
+    transform: scale(1);
+    border-radius: 10px;
+    position: relative;
+}
+.about div.show p {
+    opacity: 100%;
+    margin-left: 0;
+}
+.about div.show h3 {
+    font-weight: 800;
+    font-size: 2rem;
+}
 .about p {
     transition: 0.5s;
     margin-top: 120px;
@@ -399,6 +415,9 @@
     align-items: center;
     height: 100vh;
     position: relative;
+}
+.projects h1{
+    display: none;
 }
 .projects-container {
     display: flex;
@@ -602,7 +621,7 @@
         top: 55%;
         width: 60%;
     }
-    .skills .section .skill-row{
+    .skills .section .skill-row {
         justify-content: space-around;
     }
     .skills .section h3 {
@@ -616,7 +635,6 @@
         font-size: 1.4rem;
         line-height: 80px;
         text-align: center;
-        
     }
     .app .side-bar .links a.active {
         margin-left: 67px;
@@ -630,28 +648,27 @@
         width: 80%;
         height: 40vh;
     }
-    h1{
+    h1 {
         font-size: 3rem !important;
     }
-    .contact .row{
+    .contact .row {
         flex-wrap: wrap;
         overflow-y: scroll;
     }
-    .contact .row .col-6{
+    .contact .row .col-6 {
         width: 100% !important;
         text-align: center;
     }
-    .contact .row .left{
+    .contact .row .left {
         margin-bottom: 50px;
-
     }
-    .contact .left p{
+    .contact .left p {
         margin: 0 auto;
     }
-    .contact .right{
+    .contact .right {
         margin-bottom: 150px;
     }
-    .contact .right button{
+    .contact .right button {
         margin: 0 auto;
     }
 }
@@ -666,16 +683,55 @@
   */
 
 @media (min-width: 481px) and (max-width: 767px) {
-    .about div.active {
-        transform: scale(1.1);
-    }
     .about-main {
-        top: 30%;
+        top: 45%;
         right: 10%;
         width: 80%;
     }
     .about-main h1 {
+        font-size: 2rem !important;
         margin-bottom: 20px;
+    }
+    
+    .a-b2a {
+        overflow-y: scroll;
+    }
+    .about {
+        flex-direction: column;
+        align-items: center;
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 100% ;
+        height: auto;
+        top: 500px;
+        /* overflow-y:scroll ; */
+    }
+    .about div {
+        /* margin-top: 500px; */
+        
+        width: 100px;
+        height: 100px;
+        line-height: 80px;
+        margin-bottom: 30px;
+    }
+    .about div.active {
+        transform: scale(1);
+    }
+    .about div.show {
+        width: 100%;
+        height: fit-content;
+        margin-bottom: 30px;
+        text-align: center;
+    }
+    .about div.show p {
+        font-size: 1.1rem;
+        display: block;
+
+    }
+    .about div h3{
+        line-height: 100px;
+        font-size: 1.4rem;
     }
     .skills h1 {
         position: absolute;
@@ -685,10 +741,12 @@
         font-weight: 800;
     }
     .skills .section {
-        top: 55%;
+        top: 62%;
         width: 60%;
+        height: 65vh;
+        overflow-y: scroll;
     }
-    .skills .section .skill-row{
+    .skills .section .skill-row {
         justify-content: space-around;
     }
     .skills .section h3 {
@@ -702,42 +760,66 @@
         font-size: 1.4rem;
         line-height: 80px;
         text-align: center;
-        
+    }
+    .app .side-bar {
+        width: 45%;
     }
     .app .side-bar .links a.active {
-        margin-left: 67px;
-        font-size: 2.2rem;
+        font-size: 2rem;
         opacity: 1;
+        margin-left: 45px;
+    }
+    .app .side-bar .links a.active::before {
+        width: 22px;
+        height: 15px;
+    }
+    .app .main-section {
+        width: 55%;
+    }
+    .projects-container {
+        overflow-y: scroll;
+    }
+    .projects-container .project-box {
+        width: 100%;
+        height: 40vh;
     }
     .projects-container .project-box.active {
-        /* overflow-y: scroll; */
+        overflow-y: scroll;
     }
     .projects-container .project-box.active .background {
         width: 80%;
         height: 40vh;
     }
-    h1{
+    .projects-container .project-box.active .tech h3 {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 20px;
+    }
+    .projects-container .project-box.active .tech h3 svg {
+        margin-top: 10px;
+    }
+    h1 {
         font-size: 3rem !important;
     }
-    .contact .row{
+    .contact .row {
         flex-wrap: wrap;
         overflow-y: scroll;
     }
-    .contact .row .col-6{
+    .contact .row .col-6 {
         width: 100% !important;
         text-align: center;
     }
-    .contact .row .left{
+    .contact .row .left {
         margin-bottom: 50px;
-
     }
-    .contact .left p{
+    .contact .left p {
         margin: 0 auto;
     }
-    .contact .right{
+    .contact .right {
         margin-bottom: 150px;
     }
-    .contact .right button{
+    .contact .right button {
         margin: 0 auto;
     }
 }
@@ -748,5 +830,218 @@
   */
 
 @media (min-width: 320px) and (max-width: 480px) {
-    /* CSS */
+    
+    .app .arrow-up,
+    .app .arrow-down{
+        position: absolute;
+        background-size: cover;
+        width: 30px;
+        height: 30px;
+        cursor: pointer;
+        transition: 0.3s;
+        -webkit-animation: mover 0.3s infinite alternate;
+        animation: mover 0.3s infinite alternate;
+        z-index: 1000;
+        color: white;
+
+    }
+    .app .arrow-up{
+        background-image: url(./arrow1.png);
+        top: 25px;
+        right: 50px;
+    }
+
+    .app .arrow-down{
+        background-image: url(./arrow2.png);
+        bottom: 25px;
+        left: 25px;
+    }
+    .about-main {
+        top: 28%;
+        right: 10%;
+        width: 80%;
+    }
+    .about-main h1 {
+        /* font-size: 2rem !important; */
+        margin-bottom: 20px;
+    }
+    
+    .a-b2a {
+        overflow-y: scroll;
+    }
+    .about {
+        flex-direction: column;
+        align-items: center;
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 100% ;
+        height: auto;
+        top: 330px;
+        /* overflow-y:scroll ; */
+    }
+    .about div {
+        /* margin-top: 500px; */
+        
+        width: 100px;
+        height: 100px;
+        line-height: 80px;
+        margin-bottom: 20px;
+    }
+    .about div.active {
+        transform: scale(1);
+    }
+    .about div.show {
+        width: 100%;
+        height: fit-content;
+        margin-bottom: 30px;
+        text-align: center;
+    }
+    .about div.show p {
+        font-size: 1.1rem;
+        display: block;
+
+    }
+    .about div h3{
+        line-height: 100px;
+        font-size: 1.4rem;
+    }
+    .skills h1 {
+        position: absolute;
+        top: 18%;
+        transform: translateY(-50%);
+        font-size: 3.2rem;
+        font-weight: 800;
+    }
+    .skills .section {
+        top: 62%;
+        width: 60%;
+        height: 65vh;
+        overflow-y: scroll;
+    }
+    .skills .section .skill-row {
+        justify-content: space-around;
+    }
+    .skills .section h3 {
+        margin-bottom: 30px;
+        font-size: 2rem;
+    }
+    .skills .section .skill-row div {
+        min-width: 100px;
+        height: 100px;
+        padding: 10px;
+        font-size: 1.4rem;
+        line-height: 80px;
+        text-align: center;
+    }
+    .app .side-bar {
+        width: 100%;
+    }
+    .app .side-bar .links a.active {
+        font-size: 2.5rem;
+        opacity: 1;
+        margin-left: 45px;
+    }
+    .app .side-bar .links a.active::before {
+        width: 22px;
+        height: 15px;
+    }
+    .app .main-section {
+        width: 55%;
+    }
+    .projects{
+        flex-direction: column;
+    }
+    .projects h1{
+        margin: 40px 0;
+        display: block;
+        font-weight: 800;
+    }
+    .projects-container {
+        overflow-y: scroll;
+    }
+    .projects-container .project-box {
+        width: 100%;
+        height: 40vh;
+    }
+    .projects-container .project-box.active {
+        overflow-y: scroll;
+    }
+    .projects-container .project-box.active .background {
+        width: 80%;
+        height: 40vh;
+    }
+    .projects-container .project-box.active .tech h3 {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 20px;
+    }
+    .projects-container .project-box.active .tech h3 svg {
+        margin-top: 10px;
+    }
+    h1 {
+        font-size: 3rem !important;
+    }
+    .contact{
+        position: relative;
+        z-index: 500;
+    }
+    .contact .row {
+        flex-wrap: wrap;
+        overflow-y: scroll;
+
+    }
+    .contact .row .col-6 {
+        width: 100% !important;
+        text-align: center;
+    }
+    .contact .row .left {
+        margin-bottom: 50px;
+    }
+    .contact .left p {
+        margin: 0 auto;
+    }
+    .contact .right {
+        margin-bottom: 150px;
+    }
+    .contact .right button {
+        margin: 0 auto;
+    }
+    .app .side-bar .links a {
+        margin: 0 auto;
+        font-size: 2.5rem;
+        opacity: 1;
+    
+    }
+    .app .side-bar .links a:hover , .app .side-bar .links a.active{
+        margin-left:  auto;
+    }
+    .app .side-bar .links a.active::before{
+        display: none;
+    }
+    .app .row{
+        background-color: transparent;
+    }
+    .app .row::after{
+        display: none;
+    }
+    .app .main-section{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        background-color: #090909;
+    }
+    .app .main-section::after{
+    position: absolute;
+    content: "";
+    top: 0;
+    left: 0;
+    background-image: url(overlay.jpg);
+    width: 100%;
+    height: 100vh;
+    z-index: 1;
+    opacity: 0.1;
+    }
 }
