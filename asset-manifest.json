@@ -1,0 +1,24 @@
+{
+  "files": {
+    "main.css": "/Portfolio/static/css/main.084bb2c0.css",
+    "main.js": "/Portfolio/static/js/main.8da0c725.js",
+    "static/js/787.83a59554.chunk.js": "/Portfolio/static/js/787.83a59554.chunk.js",
+    "static/media/artifex.PNG": "/Portfolio/static/media/artifex.bba9baeedf2ed1f9b4f6.PNG",
+    "static/media/overlay.jpg": "/Portfolio/static/media/overlay.dd73dc874415504b2b63.jpg",
+    "static/media/protifolio.PNG": "/Portfolio/static/media/protifolio.f4053d7cf4a0f9d5d731.PNG",
+    "static/media/project-slide2.wav": "/Portfolio/static/media/project-slide2.af3eb808ac57ff03a594.wav",
+    "static/media/Tuder.PNG": "/Portfolio/static/media/Tuder.a8f704321aa30d9f2862.PNG",
+    "static/media/click3.wav": "/Portfolio/static/media/click3.1b36d2edfd59606dc2a2.wav",
+    "static/media/slide.wav": "/Portfolio/static/media/slide.5e0a60bea259a12de283.wav",
+    "static/media/education.PNG": "/Portfolio/static/media/education.ebfb9cde514141398297.PNG",
+    "static/media/left.png": "/Portfolio/static/media/left.3c81aecf5f22c4e91aeb.png",
+    "index.html": "/Portfolio/index.html",
+    "main.084bb2c0.css.map": "/Portfolio/static/css/main.084bb2c0.css.map",
+    "main.8da0c725.js.map": "/Portfolio/static/js/main.8da0c725.js.map",
+    "787.83a59554.chunk.js.map": "/Portfolio/static/js/787.83a59554.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.084bb2c0.css",
+    "static/js/main.8da0c725.js"
+  ]
+}
