@@ -54,7 +54,6 @@ Before you begin, ensure you have the following prerequisites installed on your 
 - CSS (including Bootstrap for styling)
 - JavaScript
 - React.js
-- Bootstrap
   
 ## Contact
 
