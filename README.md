@@ -33,7 +33,7 @@ Before you begin, ensure you have the following prerequisites installed on your 
    ```
 2. Navigate to the project folder
    ```sh
-   cd tuder
+   cd Portfolio
    ```
 3. Install NPM packages
    ```sh
@@ -43,9 +43,6 @@ Before you begin, ensure you have the following prerequisites installed on your 
    ```js
    npm start
    ```
-5.Enter the URL of the YouTube video you want to download and select the desired quality options.
-
-6.Tuder will download the video to your local machine.
 
 
 ## Technologies Used
